@@ -62,12 +62,16 @@ class HomeworkAgenda:
 
     def func_update(self) -> None:
         lst.append(self.entry.get())
+        self.entry.delete(0,'end')
         self.subjectlabel.configure(values=lst)
 
     def write2csv(self) -> None:
         subject = self.subjectlabel.get()
         aname = self.entry1.get()
         detail = self.entry2.get("1.0", END).strip()
+        self.subjectlabel.delete(0,'end')
+        self.entry1.delete(0,'end')
+        self.entry2.delete('1.0', END)
         fname = "assignments.csv"
         with open(fname, "a", newline='') as fh:
             writer = csv.writer(fh)

@@ -1,0 +1,1 @@
+& .\Tkinter\Scripts\python.exe .\HomeworkAgenda.py
